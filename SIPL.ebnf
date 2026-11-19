@@ -1,0 +1,14 @@
+program     = "begin", statement, "end" ;
+statement   = atom, { ";", atom } ;
+atom        = identifier, ":=", expression
+            | "skip"
+            | "begin", statement, "end"
+            | "if", condition, "then", atom, "else", atom
+            | "while", condition, "do", atom ;
+expression  = term, { ("+" | "-"), term } ;
+term        = factor, { "*", factor } ;
+factor      = integer | identifier | "(", expression, ")" ;
+condition   = ["¬"], comparison, { "∨", comparison } | "(", condition, ")" ;
+comparison  = expression, ("=" | ">"), expression ;
+identifier  = letter, { letter | digit | "_" } ;
+integer     = digit, { digit } ;

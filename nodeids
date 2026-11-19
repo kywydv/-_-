@@ -1,0 +1,14 @@
+[
+  "tests/test_sipl.py::test_assignment_and_arithmetic",
+  "tests/test_sipl.py::test_block",
+  "tests/test_sipl.py::test_boolean_or_not",
+  "tests/test_sipl.py::test_if_false",
+  "tests/test_sipl.py::test_if_true",
+  "tests/test_sipl.py::test_infinite_loop_limit",
+  "tests/test_sipl.py::test_missing_end",
+  "tests/test_sipl.py::test_sequence_and_skip",
+  "tests/test_sipl.py::test_syntax_error",
+  "tests/test_sipl.py::test_trace_events",
+  "tests/test_sipl.py::test_uninitialized_variable",
+  "tests/test_sipl.py::test_while"
+]

@@ -1,0 +1,5 @@
+begin
+    X := 10;
+    skip;
+    X := X - 3
+end

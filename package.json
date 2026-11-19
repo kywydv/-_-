@@ -1,0 +1,27 @@
+{
+  "name": "sipl-language",
+  "displayName": "SIPL Language Support",
+  "description": "Syntax highlighting and debug configuration for SIPL",
+  "version": "0.1.0",
+  "publisher": "student",
+  "engines": {"vscode": "^1.85.0"},
+  "categories": ["Programming Languages", "Debuggers"],
+  "activationEvents": ["onLanguage:sipl", "onDebug:launch"],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [{"id":"sipl","aliases":["SIPL"],"extensions":[".sipl"]}],
+    "grammars": [{"language":"sipl","scopeName":"source.sipl","path":"./syntaxes/sipl.tmLanguage.json"}],
+    "debuggers": [{
+      "type":"sipl",
+      "label":"SIPL Debug",
+      "languages":["sipl"],
+      "configurationAttributes":{"launch":{"required":["program"],"properties":{
+        "program":{"type":"string","description":"SIPL source file"},
+        "stopOnEntry":{"type":"boolean","default":true}
+      }}},
+      "configurationSnippets":[{"label":"SIPL: Launch","description":"Debug current SIPL program","body":{
+        "type":"sipl","request":"launch","name":"Launch SIPL","program":"${file}","stopOnEntry":true
+      }}]
+    }]
+  }
+}
